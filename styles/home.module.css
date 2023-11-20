@@ -23,4 +23,5 @@
 
 .content > form > button {
   margin-left: 10px;
+  cursor: pointer;
  }
