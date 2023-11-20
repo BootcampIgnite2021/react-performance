@@ -1,20 +1,17 @@
+import { ProductsItens } from "@/pages";
 import { memo } from "react";
 
 interface ProductItemProps {
-  product: {
-    id: number;
-    price: number;
-    title: string;
-  };
+  product: ProductsItens & { priceFormatted: string };
   onAddToWishList: (id: number) => void;
 }
 
 function ProductItemComponent({ product, onAddToWishList }: ProductItemProps) {
-  const { id, price, title } = product;
+  const { id, priceFormatted, title } = product;
 
   return (
     <div>
-      {title} - <strong>{price}</strong>
+      {title} - <strong>{priceFormatted}</strong>
       <button onClick={() => onAddToWishList(id)}>Add to wishlist</button>
     </div>
   );
